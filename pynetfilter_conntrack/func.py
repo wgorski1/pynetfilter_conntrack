@@ -13,10 +13,8 @@ library = cdll.LoadLibrary(util.find_library("netfilter_conntrack"))
 #class nfct_handle(Structure):
 #    pass
 #
-#nf_conntrack_p = POINTER(nf_conntrack)
-#nfct_handle_p = POINTER(nfct_handle)
-nf_conntrack_p = c_int
-nfct_handle_p = c_int
+nf_conntrack_p = c_void_p
+nfct_handle_p = c_void_p
 
 class nfct_conntrack_compare_t(Structure):
     _fields_ = (
