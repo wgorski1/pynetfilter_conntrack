@@ -2,7 +2,7 @@ from pynetfilter_conntrack import \
     nfct_new, nfct_destroy, nfct_snprintf,\
     nfct_get_attr, nfct_get_attr_u8, nfct_get_attr_u16, nfct_get_attr_u32,\
     nfct_set_attr, nfct_set_attr_u8, nfct_set_attr_u16, nfct_set_attr_u32,\
-    nfct_setobjopt,\
+    nfct_setobjopt, nfct_getobjopt, \
     NFCT_O_DEFAULT, NFCT_OF_SHOW_LAYER3,\
     ATTRIBUTES, NFCT_Q_UPDATE, \
     NFCT_Q_DESTROY, NFCT_MARK, \
@@ -134,6 +134,15 @@ class ConntrackEntry(EntryBase):
 
     def setobjopt(self, option):
         nfct_setobjopt(self._handle, option)
+
+    def getobjopt(self, option):
+        r = nfct_getobjopt(self._handle, option)
+
+        if r < 0:
+            raise AttributeError("Error getting option %i" % option)
+        else:
+            return r > 0
+
 
     def compare(self, other, use_layer3=True, use_layer4=True, use_mark=False):
         flags = 0

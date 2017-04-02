@@ -193,6 +193,12 @@ nfct_setobjopt.argtypes = (nf_conntrack_p, c_uint)
 nfct_setobjopt.restype = c_int
 
 # -------------------------------------------------------------------------
+# int nfct_getobjopt(const struct nf_conntrack *ct, unsigned int option)
+nfct_getobjopt = library.nfct_getobjopt
+nfct_getobjopt.argtypes = (nf_conntrack_p, c_uint)
+nfct_getobjopt.restype = c_int
+
+# -------------------------------------------------------------------------
 # int nfct_conntrack_compare(struct nfct_conntrack *ct1,
 #                            struct nfct_conntrack *ct2,
 #                            struct nfct_conntrack_compare *cmp);
@@ -206,7 +212,7 @@ __all__ = (
     "nfct_handle_p", "nfct_callback_t",
     "nfct_new", "nfct_destroy", "nfct_open", "nfct_close", "nfct_query",
     "nfct_callback_register", "nfct_callback_unregister",
-    "nfct_clone", "nfct_snprintf", "nfct_catch", "nfct_setobjopt",
+    "nfct_clone", "nfct_snprintf", "nfct_catch", "nfct_setobjopt", "nfct_getobjopt",
     "nfct_get_attr", "nfct_get_attr_u8", "nfct_get_attr_u16", "nfct_get_attr_u32",
     "nfct_set_attr", "nfct_set_attr_u8", "nfct_set_attr_u16", "nfct_set_attr_u32",
     "nfct_conntrack_compare_t", "nfct_conntrack_compare",
