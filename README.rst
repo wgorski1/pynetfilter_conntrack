@@ -1,4 +1,4 @@
-.. image:: https://travis-ci.org/wgorski1/pynetfilter_conntrack.svg?branch=master
+.. image:: https://travis-ci.org/wgorski1/pynetfilter_conntrack.svg?branch=travis
     :target: https://travis-ci.org/wgorski1/pynetfilter_conntrack
 
 =====================
