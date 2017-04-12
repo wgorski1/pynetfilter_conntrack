@@ -1,3 +1,6 @@
+.. image:: https://travis-ci.org/wgorski1/pynetfilter_conntrack.svg?branch=master
+    :target: https://travis-ci.org/wgorski1/pynetfilter_conntrack
+
 =====================
 pynetfilter_conntrack
 =====================
